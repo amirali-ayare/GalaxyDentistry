@@ -1,7 +1,7 @@
 "use client"
 import { initialState, stateReducer } from '@/client/clientData';
 import moment from 'moment-jalaali';
-import { useReducer, useState } from 'react';
+import React, { useReducer, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -22,10 +22,6 @@ export interface IAppointment {
 
 function Appointment() {
 
-    // const uniqueId = uuidv4();
-    // console.log(uniqueId);
-
-
     const doctors = [
         {
             name: 'دکتر نیوشا خانی',
@@ -41,8 +37,6 @@ function Appointment() {
         }
     ]
 
-    // json-server --watch next-galaxy/database/db.json --port 3009
-
     const [state, dispatch] = useReducer(stateReducer, initialState)
 
     const [bime, setBime] = useState('')
@@ -51,41 +45,35 @@ function Appointment() {
     const [doctor, setDoctor] = useState('')
     const [services, setServices] = useState('')
 
-    const handleInputChange = (e: any) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch({ type: "state_change", data: { name: e.target.name, value: e.target.value } })
     }
 
-    const handleDoctor = (e: any) => {
+    const handleDoctor = (e: string) => {
         dispatch({ type: "state_change", data: { name: "doctor", value: e } })
         setDoctor(e)
     }
 
-    const handleBime = (e: any) => {
+    const handleBime = (e: string) => {
         dispatch({ type: "state_change", data: { name: "bime", value: e } })
         setBime(e)
     }
 
-    const handleVisitDay = (e: any) => {
+    const handleVisitDay = (e: string) => {
         dispatch({ type: "state_change", data: { name: "day", value: e } })
         setDay(e)
     }
 
-    const handleVisitTime = (e: any) => {
+    const handleVisitTime = (e: string) => {
         dispatch({ type: "state_change", data: { name: "time", value: e } })
         setTime(e)
     }
 
-    const handleService = (e: any) => {
+    const handleService = (e: string) => {
         dispatch({ type: "state_change", data: { name: "services", value: e } })
         setServices(e)
     }
 
-    // const setUserId = () => {
-    //     dispatch({ type: "state_change", data: { name: "id", value: uniqueId } })
-    // }
-    // useEffect(()=>{
-    //     setUserId()
-    // },[])
 
     const date = new Date
     const jDate = moment();
@@ -266,7 +254,7 @@ function Appointment() {
     const sendData = async () => {
         // const res = await fetch("http://localhost:3009/appointment", {
         // const res = await fetch("http://localhost:5000/api/doctors/add", {
-        const res = await fetch("https://galaxydental.liara.run", {
+        await fetch("https://galaxydental.liara.run", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

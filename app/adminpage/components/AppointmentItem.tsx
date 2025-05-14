@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { IAppointmentData } from '../page'
 
 function AppointmentItem({ name, national_code, doctor, day, time, services }: IAppointmentData) {
-    const [open, setOpen] = useState(false)
+    // const [open, setOpen] = useState(false)
 
     return (
         <div className='relative'>
@@ -16,7 +16,7 @@ function AppointmentItem({ name, national_code, doctor, day, time, services }: I
                 <div className='flex items-center justify-center'><h3 className='text-md font-light text-gray-500 '>{doctor}</h3></div>
             </div>
 
-            <div style={{zIndex:'99999999999999999'}} className={open ? 'appointmentItem-menu absolute bg-white flex flex-col rounded-lg cursor-pointer' : 'hidden'}>
+            {/* <div style={{zIndex:'99999999999999999'}} className={open ? 'appointmentItem-menu absolute bg-white flex flex-col rounded-lg cursor-pointer' : 'hidden'}>
                 <div className='py-2 px-5 bg-red-50 hover:bg-red-100 text-red-500 duration-300 flex items-center justify-center rounded-tl-lg rounded-tr-lg select-none'>
                     لغو نوبت
                     <i className='bx bxs-hand mr-2'></i>
@@ -25,7 +25,7 @@ function AppointmentItem({ name, national_code, doctor, day, time, services }: I
                     مشخصات
                     <i className='bx bx-info-circle mr-2'></i>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

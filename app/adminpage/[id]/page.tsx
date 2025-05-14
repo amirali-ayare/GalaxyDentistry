@@ -2,7 +2,7 @@ import React from 'react'
 
 interface IProps {
     params: Promise<{ id: string }>;
-    searchParams: Promise<{}>;
+    // searchParams: Promise<{}>;
 }
 
 interface IAppointmentTableData {
@@ -24,7 +24,7 @@ async function patientPage({ params }: IProps) {
     
     // const res = await fetch(`http://localhost:5000/api/doctors/${id}`)
     const res = await fetch(`https://galaxydental.liara.run/appointment/${id}`)
-    const data:any = await res.json() as IAppointmentTableData
+    const data = await res.json() as IAppointmentTableData
 
     return (
         <div id='patientPage' className='w-screen h-screen flex items-center justify-center'>
