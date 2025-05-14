@@ -1,7 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
-import AppointmentItem from './components/AppointmentItem'
-import Link from 'next/link'
+import React from 'react'
 import AdminNav from './components/AdminNav'
 
 export interface IAppointmentData {

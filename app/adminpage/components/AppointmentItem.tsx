@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React from 'react'
 import { IAppointmentData } from '../page'
 
 function AppointmentItem({ name, national_code, doctor, day, time, services }: IAppointmentData) {
