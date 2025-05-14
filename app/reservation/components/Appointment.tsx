@@ -249,9 +249,9 @@ function Appointment() {
     }
 
     function succesNotify() {
-        toast.success('نوبت با موفقیت رزرو شد', {
+        toast.success('چون API قابلیت POST نداره نمیتونیم ارسال کنیم. ولی میتونید از پنل ادمین رزرو های سابق را ببینید  /adminpage', {
             position: "top-center",
-            autoClose: 2000,
+            autoClose: 7000,
             hideProgressBar: false,
             closeOnClick: false,
             pauseOnHover: true,
@@ -265,7 +265,8 @@ function Appointment() {
 
     const sendData = async () => {
         // const res = await fetch("http://localhost:3009/appointment", {
-        const res = await fetch("http://localhost:5000/api/doctors/add", {
+        // const res = await fetch("http://localhost:5000/api/doctors/add", {
+        const res = await fetch("https://galaxydental.liara.run", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

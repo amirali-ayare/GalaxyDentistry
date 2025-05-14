@@ -23,7 +23,8 @@ async function patientPage({ params }: IProps) {
 
     const { id } = await params
     
-    const res = await fetch(`http://localhost:5000/api/doctors/${id}`)
+    // const res = await fetch(`http://localhost:5000/api/doctors/${id}`)
+    const res = await fetch(`https://galaxydental.liara.run/appointment/${id}`)
     const data:any = await res.json() as IAppointmentTableData
 
     return (
@@ -39,39 +40,39 @@ async function patientPage({ params }: IProps) {
                 <tbody>
                     <tr className="bg-white hover:bg-blue-100">
                         <td className="py-2 px-4 border border-gray-300">نام بیمار</td>
-                        <td className="py-2 px-4 border border-gray-300">{data[0].name}</td>
+                        <td className="py-2 px-4 border border-gray-300">{data.name}</td>
                     </tr>
                     <tr className="bg-white hover:bg-blue-100">
                         <td className="py-2 px-4 border border-gray-300">کد ملی</td>
-                        <td className="py-2 px-4 border border-gray-300">{data[0].national_code}</td>
+                        <td className="py-2 px-4 border border-gray-300">{data.national_code}</td>
                     </tr>
                     <tr className="bg-white hover:bg-blue-100">
                         <td className="py-2 px-4 border border-gray-300">شماره موبایل</td>
-                        <td className="py-2 px-4 border border-gray-300">{data[0].phone_number}</td>
+                        <td className="py-2 px-4 border border-gray-300">{data.phone_number}</td>
                     </tr>
                     <tr className="bg-white hover:bg-blue-100">
                         <td className="py-2 px-4 border border-gray-300">سن</td>
-                        <td className="py-2 px-4 border border-gray-300">{data[0].age}</td>
+                        <td className="py-2 px-4 border border-gray-300">{data.age}</td>
                     </tr>
                     <tr className="bg-white hover:bg-blue-100">
                         <td className="py-2 px-4 border border-gray-300">دکتر</td>
-                        <td className="py-2 px-4 border border-gray-300">{data[0].doctor}</td>
+                        <td className="py-2 px-4 border border-gray-300">{data.doctor}</td>
                     </tr>
                     <tr className="bg-white hover:bg-blue-100">
                         <td className="py-2 px-4 border border-gray-300">بیمه</td>
-                        <td className="py-2 px-4 border border-gray-300">{data[0].bime}</td>
+                        <td className="py-2 px-4 border border-gray-300">{data.bime}</td>
                     </tr>
                     <tr className="bg-white hover:bg-blue-100">
                         <td className="py-2 px-4 border border-gray-300">روز</td>
-                        <td className="py-2 px-4 border border-gray-300">{data[0].day}</td>
+                        <td className="py-2 px-4 border border-gray-300">{data.day}</td>
                     </tr>
                     <tr className="bg-white hover:bg-blue-100">
                         <td className="py-2 px-4 border border-gray-300">ساعت</td>
-                        <td className="py-2 px-4 border border-gray-300">{data[0].time}</td>
+                        <td className="py-2 px-4 border border-gray-300">{data.time}</td>
                     </tr>
                     <tr className="bg-white hover:bg-blue-100">
                         <td className="py-2 px-4 border border-gray-300">سرویس</td>
-                        <td className="py-2 px-4 border border-gray-300">{data[0].services}</td>
+                        <td className="py-2 px-4 border border-gray-300">{data.services}</td>
                     </tr>
                 </tbody>
             </table>

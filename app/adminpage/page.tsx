@@ -40,7 +40,8 @@ function page() {
     useEffect(() => {
         const getData = async () => {
             // const res = await fetch("http://localhost:3009/appointment");
-            const res = await fetch("http://localhost:5000/api/doctors");
+            // const res = await fetch("http://localhost:5000/api/doctors");
+            const res = await fetch("https://galaxydental.liara.run/appointment");
             const data = await res.json();
             setOriginalData(data)
             setAppointmentData(data)
