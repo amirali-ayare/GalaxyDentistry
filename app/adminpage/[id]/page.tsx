@@ -1,5 +1,4 @@
 import React from 'react'
-import { IAppointmentData } from '../page'
 
 interface IProps {
     params: Promise<{ id: string }>;

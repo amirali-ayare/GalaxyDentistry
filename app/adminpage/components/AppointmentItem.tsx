@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { IAppointmentData } from '../page'
 
-function AppointmentItem({ name, phone_number, age, national_code, doctor, bime, day, time, services }: IAppointmentData) {
+function AppointmentItem({ name, national_code, doctor, day, time, services }: IAppointmentData) {
     const [open, setOpen] = useState(false)
 
     return (

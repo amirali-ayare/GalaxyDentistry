@@ -1,9 +1,6 @@
 "use client"
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { AppContext } from '@/context/AppContext'
-import Footer from '../Footer';
-import Creator from '../Creator';
-import Navbar from '../navbar';
 
 
 interface ILayoutProps {

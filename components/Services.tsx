@@ -2,7 +2,6 @@ import React from 'react'
 import s1 from '../image/service1.jpg';
 import s2 from '../image/service2.jpg';
 import s3 from '../image/service3.jpg';
-import Image from 'next/image';
 import ServCard from './ServCard';
 
 

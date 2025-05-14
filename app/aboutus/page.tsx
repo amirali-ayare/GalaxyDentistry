@@ -1,6 +1,5 @@
 import AboutInHome from '@/components/aboutInHome'
 import Navbar from '@/components/navbar'
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import ab1 from '@/image/ab1.jpg'
